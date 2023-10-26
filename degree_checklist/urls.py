@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, form_views, record_views
+from . import views, form_views, record_views, import_views
 
 urlpatterns = [
     # Existing views and forms URLs
@@ -28,4 +28,7 @@ urlpatterns = [
          name='student_degree_checklist_records'),
     path('course_enrollment_records/', record_views.CourseEnrollmentAllRecordsView.as_view(),
          name='course_enrollment_records'),
+
+    # Import view URL
+    path('data-import/', import_views.data_import_view, name='data_import_view'),
 ]
